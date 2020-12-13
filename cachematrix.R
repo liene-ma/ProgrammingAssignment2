@@ -1,7 +1,11 @@
 ## Put comments here that give an overall description of what your
-## functions do
+## functions do - MakeCacheMatrix will create a special matrix object that can cache an inverse.
 
-## Write a short comment describing this function
+
+## Write a short comment describing this function - we imply that matrix is invertible,
+## set the value of the matrix to y using another function, double arrow assignment 
+## is useful it is a function written by another function, allow to have parallel 
+## arguments.
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
@@ -30,3 +34,15 @@ cacheSolve <- function(x, ...) {
         x$setInverse(inv)
         inv
 }
+## > mymatrix <- makeCacheMatrix(matrix(1:4, nrow=2, ncol=2))
+##> mymatrix$get()
+##[,1] [,2]
+##[1,]    1    3
+##[2,]    2    4
+##> mymatrix$getInverse()
+##NULL
+##> cacheSolve(mymatrix)
+##[,1] [,2]
+##[1,]   -2  1.5
+##[2,]    1 -0.5
+>
